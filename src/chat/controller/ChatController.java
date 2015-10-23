@@ -30,5 +30,4 @@ public class ChatController
 				textFromUser = display.getAnswer("wow " + textFromUser);
 			}
 		}
-	
 }
