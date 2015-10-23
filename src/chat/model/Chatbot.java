@@ -51,7 +51,7 @@ public class Chatbot
 			}
 		}
 		
-		return false;
+		return hasLength;
 	}
 	
 	/**
