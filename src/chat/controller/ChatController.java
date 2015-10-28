@@ -24,10 +24,16 @@ public class ChatController
 	
 		private void chat()
 		{
-			String textFromUser = display.getAnswer("Talk to chatbot");
-			while(simpleBot.lengthChecker(textFromUser))
+			String conversation = display.getAnswer("What would you like to talk about today");
+			while(simpleBot.lengthChecker(conversation))
 			{
-				textFromUser = display.getAnswer("wow " + textFromUser);
+				
+				if(simpleBot.contentChecker(conversation))
+				{
+					display.display("Wow, i had no idea you loved " + simpleBot.getContent());
+				}
+				
+				conversation = display.getAnswer("dezz " + conversation + " nuts");
 			}
 		}
 }
