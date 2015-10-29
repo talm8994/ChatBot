@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part
  * of the project.
  * @author Thomas Almeida
- * @version 1.1 10/14/15
+ * @version 1.2 10/28/15 Build new stuff and things.
  */
 public class Chatbot
 {
@@ -41,8 +41,8 @@ public class Chatbot
 		this.memesList.add("dezzz nuts");
 		this.memesList.add("your mom");
 		this.memesList.add("trevors face");
-		this.memesList.add("my face");
-		this.memesList.add("mega PEPE");
+		this.memesList.add("bop");
+		this.memesList.add("yee");
 	}
 	
 	private void buildPoliticalTopicsList()
@@ -110,8 +110,15 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
-	}
+		boolean isMeme = false;
+		
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{		
+		 isMeme = true;
+	    }
+		
+		return isMeme;
+	}	
 	
 	/**
 	 * Returns the username of this Chatbot instance.
