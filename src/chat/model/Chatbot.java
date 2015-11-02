@@ -14,6 +14,7 @@ public class Chatbot
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
+	private String Maincontent;
 	
 	/**
 	 * Creates an instance of the Chatbot with the supplied username.
@@ -25,7 +26,7 @@ public class Chatbot
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;	
 		this.content ="csgo";
-		this.content = "dez nuts";
+		this.Maincontent = "meme";
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
@@ -82,7 +83,7 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		if(currentInput.toLowerCase().contains(content.toLowerCase()) || currentInput.toLowerCase().contains(Maincontent.toLowerCase()))
 		{
 			hasContent= true;
 		}
