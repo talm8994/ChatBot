@@ -32,9 +32,9 @@ public class ChatController
 				{
 					display.display("Wow, i had no idea you loved " + simpleBot.getContent());
 				}
-				if(simpleBot.memeChecker(conversation))
+				else if(simpleBot.memeChecker(conversation))
 				{
-					display.display("dang thats a dank meme" + simpleBot.getContent());
+					display.display("dang thats a dank meme");
 				}
 				conversation = display.getAnswer("what is " + conversation );
 			}

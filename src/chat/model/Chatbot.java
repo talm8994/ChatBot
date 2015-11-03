@@ -26,7 +26,6 @@ public class Chatbot
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;	
 		this.content ="csgo";
-		this.Maincontent = "meme";
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
@@ -42,7 +41,7 @@ public class Chatbot
 		this.memesList.add("dezzz nuts");
 		this.memesList.add("your mom");
 		this.memesList.add("trevors face");
-		this.memesList.add("bop");
+		this.memesList.add("meme");
 		this.memesList.add("yee");
 	}
 	
@@ -68,8 +67,6 @@ public class Chatbot
 				hasLength = true; 
 			}
 		}
-		boolean hasContent = false;
-		
 		
 		return hasLength;
 	}
@@ -83,7 +80,7 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		if(currentInput.toLowerCase().contains(content.toLowerCase()) || currentInput.toLowerCase().contains(Maincontent.toLowerCase()))
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent= true;
 		}
@@ -113,10 +110,13 @@ public class Chatbot
 	{
 		boolean isMeme = false;
 		
-		if(currentInput.toLowerCase().contains(content.toLowerCase()))
-		{		
-		 isMeme = true;
-	    }
+		for(String meme : memesList)
+		{
+			if (currentInput.toLowerCase().contains(meme.toLowerCase()))
+			{
+				isMeme = true;
+			}
+		}
 		
 		return isMeme;
 	}
