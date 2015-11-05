@@ -22,7 +22,7 @@ public class ChatPopupView
 	{
 		String answer = "";
 		
-		answer = JOptionPane.showInputDialog(null, displayMessage);
+		answer = JOptionPane.showInputDialog(null, displayMessage, windowMessage, JOptionPane.INFORMATION_MESSAGE, chatIcon, null, "Type here please!").toString();
 				
 	    return answer;
 	}
