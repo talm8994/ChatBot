@@ -15,7 +15,7 @@ public class ChatPopupView
 	public ChatPopupView()
 	{
 		windowMessage = ("this is chatbot");
-		chatIcon = new ImageIcon(getClass().getResource("images/chatbot.png"));
+		chatIcon = new ImageIcon(getClass().getResource("images/megaman_icon.png"));
 	}
 	
 	public String getAnswer(String displayMessage)
@@ -28,6 +28,6 @@ public class ChatPopupView
 	}
 	public void display(String displayMessage)
 	{
-		JOptionPane.showMessageDialog(null, displayMessage);
+		JOptionPane.showMessageDialog(null, displayMessage, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
 	}
 }
