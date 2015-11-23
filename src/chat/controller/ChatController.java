@@ -2,17 +2,21 @@ package chat.controller;
 
 import chat.view.ChatPopupView;
 import chat.model.Chatbot;
+import chat.view.*;
 
 public class ChatController
 {
 	private Chatbot simpleBot;
 	private ChatPopupView display;
+	private ChatFrame baseFrame;
 
 	public ChatController()
 	{
 		display = new ChatPopupView();
 		String user = display.getAnswer("What is your name");
 		simpleBot = new Chatbot(user);
+		baseFrame = new ChatFrame(this);
+		
 	}
 	
 	public void start()
