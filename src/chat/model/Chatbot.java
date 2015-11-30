@@ -12,7 +12,7 @@ public class Chatbot
 {
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
-	private ArrayList<String> keyBoardMasher;
+	private ArrayList<String> keyboardMashChecker;
 	private String userName;
 	private String content;
 	private String Maincontent;
@@ -25,12 +25,13 @@ public class Chatbot
 	{
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
+		this.keyboardMashChecker = new ArrayList<String>();
 		this.userName = userName;	
 		this.content ="csgo";
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
-		buildKeyboardMasherChecker();
+		buildKeyboardMashChecker();
 	}
 	
 	private void buildMemesList()
@@ -66,12 +67,12 @@ public class Chatbot
 		
 	}
 	
-	private void buildKeyboardMasher()
+	private void buildKeyboardMashChecker()
 	{
-		this.keyboardMashCheker.add("sdf");
-		this.keyboardMashCheker.add("dfg");
-		this.keyboardMashCheker.add("cvb");
-		this.keyboardMashCheker.add(",./");
+		this.keyboardMashChecker.add("sdf");
+		this.keyboardMashChecker.add("dfg");
+		this.keyboardMashChecker.add("cvb");
+		this.keyboardMashChecker.add(",./");
 		
 	}
 	
@@ -238,6 +239,12 @@ public class Chatbot
 		return null;
 	}
 	
+	private boolean keybordMashChecker()
+	{
+		boolean isMash = false;
+		
+	}
+	
 	/**
 	 * Updates the content area for this Chatbot instance.
 	 * @param content The updated value for the content area.
@@ -246,6 +253,7 @@ public class Chatbot
 	{
 		
 	}
+	
 }
 
 
