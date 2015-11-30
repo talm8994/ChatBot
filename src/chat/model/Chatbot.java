@@ -12,6 +12,7 @@ public class Chatbot
 {
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> keyBoardMasher;
 	private String userName;
 	private String content;
 	private String Maincontent;
@@ -29,6 +30,7 @@ public class Chatbot
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
+		buildKeyboardMasherChecker();
 	}
 	
 	private void buildMemesList()
@@ -61,6 +63,15 @@ public class Chatbot
 		this.politicalTopicList.add("Sanders");
 		this.politicalTopicList.add("vote");
 		this.politicalTopicList.add("11/8/2016");
+		
+	}
+	
+	private void buildKeyboardMasher()
+	{
+		this.keyboardMashCheker.add("sdf");
+		this.keyboardMashCheker.add("dfg");
+		this.keyboardMashCheker.add("cvb");
+		this.keyboardMashCheker.add(",./");
 		
 	}
 	
