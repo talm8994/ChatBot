@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
  * @author talm8994
  *
  */
-public class ChatPopupView
+public class ChatView
 {
 	private String windowMessage;
 	private ImageIcon chatIcon;
@@ -16,7 +16,7 @@ public class ChatPopupView
 	private ImageIcon papyIcon;
 	private ImageIcon pearlIcon;
 	private ImageIcon jakeIcon;
-	public ChatPopupView()
+	public ChatView()
 	{
 		windowMessage = ("this is chatbot");
 		papyIcon = new ImageIcon(getClass().getResource("images/papyras.jpg"));

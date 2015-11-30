@@ -1,18 +1,19 @@
 package chat.controller;
 
-import chat.view.ChatPopupView;
+import chat.view.ChatView;
 import chat.model.Chatbot;
 import chat.view.*;
+import static org.junit.Assert.*;
 
 public class ChatController
 {
 	private Chatbot simpleBot;
-	private ChatPopupView display;
+	private ChatView display;
 	private ChatFrame baseFrame;
 
 	public ChatController()
 	{
-		display = new ChatPopupView();
+		display = new ChatView();
 		String user = display.getAnswer("What is your name");
 		simpleBot = new Chatbot(user);
 		baseFrame = new ChatFrame(this);
@@ -43,4 +44,20 @@ public class ChatController
 				conversation = display.getAnswer("what is " + conversation );
 			}
 		}
+		
+		public Chatbot getChatbot()
+		{
+			return simpleBot;
+		}
+		
+		public ChatView getChatView()
+		{
+			return display;
+		}
+		
+		public ChatFrame getBaseFrame()
+		{
+			return baseFrame;
+		}
+		
 }

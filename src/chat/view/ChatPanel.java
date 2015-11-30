@@ -37,6 +37,8 @@ public class ChatPanel extends JPanel
 		this.add(submitButton);
 		this.add(inputField);
 		this.add(outputField);
+		inputField.setToolTipText("Type here fro chat bot");
+		outputField.setEnabled(false);
 		
 	}
 	
@@ -57,5 +59,10 @@ public class ChatPanel extends JPanel
 	private void setupListeners()
 	{
 		
+	}
+	
+	public JTextField getTextField()
+	{
+		return inputField;
 	}
 }
