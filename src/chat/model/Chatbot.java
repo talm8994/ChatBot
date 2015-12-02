@@ -163,6 +163,11 @@ public class Chatbot
 		String nextConversation = "oh, what else would you like to talk about?";
 		int randomTopic = (int) (Math.random() * 5);
 		
+		if(keyboardMashChecker(currentInput))
+		{
+			return "Stop it ma'lady";
+		}
+		
 		switch (randomTopic)
 		{
 		case 0:
@@ -216,6 +221,18 @@ public class Chatbot
 	 * Returns the content area for this Chatbot instance.
 	 * @return The content area for this Chatbot instance.
 	 */
+	
+	public boolean quitChecker(String currentInput)
+	{
+		boolean hasQuit = false;
+		if(currentInput.toLowerCase().contains("quit"))
+		{
+			hasQuit = true;
+		}
+		return hasQuit;
+		
+	}
+	
 	public String getContent()
 	{
 		return content;
@@ -261,7 +278,7 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
-		
+		this.content = content;
 	}
 	
 }

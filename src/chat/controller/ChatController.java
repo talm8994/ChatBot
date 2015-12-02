@@ -61,4 +61,10 @@ public class ChatController
 			return baseFrame;
 		}
 		
+		private void shutDown()
+		{
+			display.display("bye " + simpleBot.getUserName() + "it has been my pleasure to talk with you");
+			System.exit(0);
+		}
+		
 }
