@@ -5,7 +5,8 @@ import chat.controller.ChatController;
 import javax.swing.*;
 
 import java.awt.*;
-import java.awt.Event.*;
+import java.awt.event.*;
+
 
 public class ChatPanel extends JPanel
 {
@@ -58,6 +59,17 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		submitButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = inputField.getText();
+				String response = baseController.fromUserToChatBot(userText);
+				outputField.append("\nUser: " + userText);
+				outputField.append("\nChatbot: " + response);
+				inputField.setText("");
+			}
+		});
 		
 	}
 	

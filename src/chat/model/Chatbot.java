@@ -239,9 +239,19 @@ public class Chatbot
 		return null;
 	}
 	
-	private boolean keybordMashChecker()
+	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean isMash = false;
+		
+		for (String s : keyboardMashChecker)
+		{
+			if(s.equals(currentInput))
+			{
+				isMash = true;
+			}
+		}
+		
+		return isMash;
 		
 	}
 	
