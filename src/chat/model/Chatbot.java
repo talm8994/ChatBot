@@ -46,13 +46,14 @@ public class Chatbot
 		this.memesList.add("trevors face");
 		this.memesList.add("meme");
 		this.memesList.add("yee");
+		this.memesList.add("cute animals");
 	}
 	
 	private void buildPoliticalTopicsList()
 	{
 		this.politicalTopicList.add("election");
-		this.politicalTopicList.add("democrat");
-		this.politicalTopicList.add("republican");
+		this.politicalTopicList.add("Democrat");
+		this.politicalTopicList.add("Republican");
 		this.politicalTopicList.add("liberal");
 		this.politicalTopicList.add("conservative");
 		this.politicalTopicList.add("Trump");
@@ -63,7 +64,7 @@ public class Chatbot
 		this.politicalTopicList.add("Fiorina");
 		this.politicalTopicList.add("Sanders");
 		this.politicalTopicList.add("vote");
-		this.politicalTopicList.add("11/8/2016");
+		this.politicalTopicList.add("11/4/16");
 		
 	}
 	
@@ -244,7 +245,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getMemesList()
 	{
-		return null;
+		return memesList;
 	}
 	
 	/**
@@ -253,7 +254,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return null;
+		return politicalTopicList;
 	}
 	
 	public boolean keyboardMashChecker(String currentInput)

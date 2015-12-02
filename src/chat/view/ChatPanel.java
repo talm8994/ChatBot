@@ -15,6 +15,7 @@ public class ChatPanel extends JPanel
 	private JTextField inputField;
 	private JTextArea outputField;
 	private SpringLayout baseLayout;
+	private JLabel label;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -24,6 +25,9 @@ public class ChatPanel extends JPanel
 		submitButton = new JButton("submit");
 		inputField = new JTextField("type crap");
 		outputField = new JTextArea("type here");
+		label = new JLabel("hello");
+		baseLayout.putConstraint(SpringLayout.WEST, label, 0, SpringLayout.WEST, outputField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, label, -10, SpringLayout.SOUTH, this);
 		
 		
 		setupPanel();
@@ -38,6 +42,7 @@ public class ChatPanel extends JPanel
 		this.add(submitButton);
 		this.add(inputField);
 		this.add(outputField);
+		this.add(label);
 		inputField.setToolTipText("Type here fro chat bot");
 		outputField.setEnabled(false);
 		
@@ -45,6 +50,8 @@ public class ChatPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		baseLayout.putConstraint(SpringLayout.WEST, label, 0, SpringLayout.WEST, outputField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, label, -10, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, submitButton, 162, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 275, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, submitButton, 6, SpringLayout.SOUTH, inputField);
