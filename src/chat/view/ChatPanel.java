@@ -52,6 +52,8 @@ public class ChatPanel extends JPanel
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, label, 0, SpringLayout.WEST, outputField);
 		baseLayout.putConstraint(SpringLayout.SOUTH, label, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, label, 0, SpringLayout.WEST, outputField);
+		baseLayout.putConstraint(SpringLayout.SOUTH, label, -10, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, submitButton, 162, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 275, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, submitButton, 6, SpringLayout.SOUTH, inputField);
