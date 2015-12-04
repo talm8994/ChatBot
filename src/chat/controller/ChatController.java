@@ -1,3 +1,7 @@
+/**
+ * this controlles it all 
+ */
+
 package chat.controller;
 
 import chat.view.ChatView;
@@ -39,6 +43,11 @@ public class ChatController
 		
 		public String fromUserToChatBot(String conversation)
 		{
+			if (simpleBot.quitChecker(conversation))
+			{
+				display.display("goodbye");
+				shutDown();
+			}
 			String botResponse = "";
 			
 			botResponse = simpleBot.processConversation(conversation);

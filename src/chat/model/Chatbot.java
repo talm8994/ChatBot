@@ -1,3 +1,7 @@
+/**
+ * this is where you type it all out for the ultimate code
+ */
+
 package chat.model;
 
 import java.util.ArrayList;

@@ -1,3 +1,7 @@
+/**
+ * this is where the gui is 
+ */
+
 package chat.view;
 
 import chat.controller.ChatController;

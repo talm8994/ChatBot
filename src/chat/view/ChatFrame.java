@@ -1,3 +1,6 @@
+/**
+ * this is the frame and makes it show with stuff
+ */
 package chat.view;
 
 import javax.swing.*;
