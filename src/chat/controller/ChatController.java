@@ -45,7 +45,6 @@ public class ChatController
 		{
 			if (simpleBot.quitChecker(conversation))
 			{
-				display.display("goodbye");
 				shutDown();
 			}
 			String botResponse = "";
