@@ -166,7 +166,7 @@ public class Chatbot
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "oh, what else would you like to talk about?";
-		int randomTopic = (int) (Math.random() * 5);
+		int randomTopic = (int) (Math.random() * 7);
 		
 		if(keyboardMashChecker(currentInput))
 		{
@@ -184,29 +184,29 @@ public class Chatbot
 		case 1:
 			if (memeChecker(currentInput))
 			{
-				nextConversation = "That is a popular meme this year! wow! what is your favorite food?";
+				nextConversation = "That is a popular meme this year! wow!";
 			}
 			break;
 		case 2:
 			if(politicalTopicChecker(currentInput))
 			{
-				
+				nextConversation = "lol you must be old ";
 			}
 			break;
 		case 3:
 			if (currentInput.length() > 23)
 			{
-				nextConversation = "";
+				nextConversation = "My Bow Wow";
 			}
 			break;
 		case 4:
 			nextConversation = "haha wow no way thats super cool also do you love cats";
 			break;
 		case 5:
-			nextConversation = "";
+			nextConversation = "gg M8O";
 			break;
 		case 6:
-			nextConversation = "";
+			nextConversation = "I'm bored bye";
 			break;
 		}
 		
@@ -230,7 +230,7 @@ public class Chatbot
 	public boolean quitChecker(String currentInput)
 	{
 		boolean hasQuit = false;
-		if(currentInput.toLowerCase().contains("quit"))
+		if(currentInput.toLowerCase().contains("quit")||currentInput.toLowerCase().contains("bye"))
 		{
 			hasQuit = true;
 		}
