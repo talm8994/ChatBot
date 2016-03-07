@@ -5,6 +5,7 @@
 package chat.controller;
 
 import chat.view.ChatView;
+import chat.model.*;
 import chat.model.Chatbot;
 import chat.view.*;
 import static org.junit.Assert.*;
@@ -14,9 +15,11 @@ public class ChatController
 	private Chatbot simpleBot;
 	private ChatView display;
 	private ChatFrame baseFrame;
+	private CTECTwitter myTwitter;
 
 	public ChatController()
 	{
+		myTwitter = new CTECTwitter(this);
 		display = new ChatView();
 		String user = display.getAnswer("What is your name");
 		simpleBot = new Chatbot(user);
@@ -73,6 +76,10 @@ public class ChatController
 		{
 			display.display("bye " + simpleBot.getUserName() + "it has been my pleasure to talk with you");
 			System.exit(0);
+		}
+		public void handleErrors(String error)
+		{
+			display.display(error);
 		}
 		
 }
