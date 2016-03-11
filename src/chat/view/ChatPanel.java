@@ -21,6 +21,7 @@ public class ChatPanel extends JPanel
 	private JTextArea outputField;
 	private SpringLayout baseLayout;
 	private JLabel label;
+	private JButton socialButton;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -33,6 +34,7 @@ public class ChatPanel extends JPanel
 		outputField = new JTextArea("type here");
 		label = new JLabel("hello");
 		outputField = new JTextArea(10,25);
+		socialButton = new JButton("social");
 		
 		
 		setupChatPane();
@@ -101,6 +103,17 @@ public class ChatPanel extends JPanel
 				inputField.setText("");
 			}
 		});
+		
+		socialButton.addActionListener(new ActionListener())
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String user = typingField.getText();
+				String results = basentroller.analyze(user);
+				chatArea.setText(results);
+			}
+		}
+		
 		
 	}
 	

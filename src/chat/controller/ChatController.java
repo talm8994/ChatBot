@@ -77,6 +77,17 @@ public class ChatController
 			display.display("bye " + simpleBot.getUserName() + "it has been my pleasure to talk with you");
 			System.exit(0);
 		}
+		public void sendTweet(String tweet)
+		{
+			myTwitter.sendTweet(tweet);
+		}
+		public String analyze(String userName)
+		{
+			String userAnalysis = "The Twitter user " + userName + "has...";
+			
+			return userAnalysis;
+		}
+		
 		public void handleErrors(String error)
 		{
 			display.display(error);

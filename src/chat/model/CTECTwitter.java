@@ -1,6 +1,7 @@
 package chat.model;
 
 import java.util.*;
+
 import twitter4j.*;
 import chat.controller.*;
 
@@ -21,7 +22,14 @@ public class CTECTwitter
 		
 		public void sendTweet(String message)
 		{
+			try
+			{
 			CTECTwitter.updateStatus("I just tweeted from my Java Chatbot program! #APCSRocks @CTECNow Thanks @cscheerleader & @codyhenrichsen!");
+			}
+			catch(TwitterException error)
+			{
+				baseController.handleErrors(error.getErrorMessage());
+			}
 		}
 
 }
