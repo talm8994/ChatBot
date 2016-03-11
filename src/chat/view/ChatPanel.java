@@ -22,6 +22,7 @@ public class ChatPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JLabel label;
 	private JButton socialButton;
+	private JButton tweetButton;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -35,6 +36,9 @@ public class ChatPanel extends JPanel
 		label = new JLabel("hello");
 		outputField = new JTextArea(10,25);
 		socialButton = new JButton("social");
+		tweetButton = new JButton("Tweet");
+		baseLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -6, SpringLayout.NORTH, inputField);
+		baseLayout.putConstraint(SpringLayout.EAST, tweetButton, -156, SpringLayout.EAST, this);
 		
 		
 		setupChatPane();
@@ -47,9 +51,11 @@ public class ChatPanel extends JPanel
 	{
 		outputField.setLineWrap(true);
 		outputField.setWrapStyleWord(true);
-		outputField.setEditable(false);
+		outputField.setEnabled(false);
 		outputField.setEditable(false);
 		textPane = new JScrollPane(outputField);
+		baseLayout.putConstraint(SpringLayout.NORTH, textPane, 0, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, textPane, 48, SpringLayout.WEST, this);
 		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	}
@@ -59,14 +65,15 @@ public class ChatPanel extends JPanel
 		this.setLayout(baseLayout);
 		this.add(submitButton);
 		this.add(inputField);
-		this.add(outputField);
 		this.add(label);
+		this.add(tweetButton);
 		inputField.setToolTipText("Type here fro chat bot");
 		outputField.setEnabled(false);
 		JButton btnNewButton = new JButton("social");
 		baseLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 0, SpringLayout.NORTH, submitButton);
 		baseLayout.putConstraint(SpringLayout.EAST, btnNewButton, -25, SpringLayout.WEST, submitButton);
 		add(btnNewButton);
+		this.add(textPane);
 		
 	}
 	
@@ -104,17 +111,23 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		socialButton.addActionListener(new ActionListener())
+		socialButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				String user = typingField.getText();
-				String results = basentroller.analyze(user);
-				chatArea.setText(results);
+				String user = inputField.getText();
+				String results = baseController.analyze(user);
+				outputField.setText(results);
 			}
-		}
+		});
 		
-		
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				baseController.sendTweet(inputField.getText());
+			}
+		});
 	}
 	
 	public JTextField getTextField()

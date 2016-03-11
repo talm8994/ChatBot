@@ -81,6 +81,7 @@ public class ChatController
 		{
 			myTwitter.sendTweet(tweet);
 		}
+		
 		public String analyze(String userName)
 		{
 			String userAnalysis = "The Twitter user " + userName + "has...";
