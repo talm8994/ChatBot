@@ -2,6 +2,7 @@ package chat.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import twitter4j.Paging;
 import twitter4j.Status;
@@ -38,6 +39,8 @@ public class CTECTwitter
 		}
 		public void loadTweets(String twitterHandle) throws TwitterException
 		{
+			statusList.clear();
+			wordsList.clear();
 			Paging statusPage = new Paging(1, 200);
 			int page = 1;
 			while (page <= 10)
@@ -70,5 +73,29 @@ public class CTECTwitter
 		private void removeEmptyText()
 		{
 			
+		}
+		private String[] importWordsToArray()
+		{
+			String[] boringWords;
+			int wordCount = 0;
+			
+			Scanner wordFile = new Scanner(getClass().getResourceAsStream("commonWords.txt"));
+			while (wordFile.hasNext())
+			{
+				wordCount++;
+				wordFile.next();
+			}
+			
+			wordFile.reset();
+			boringWords = new String[wordCount];
+			int boringWordCount = 0;
+			while (wordFile.hasNext())
+			{
+				boringWords[boringWordCount] = wordFile.next();
+				boringWordCount++;
+			}
+			wordFile.close();
+			
+			return boringWords;
 		}
 }
