@@ -86,7 +86,7 @@ public class CTECTwitter
 				wordFile.next();
 			}
 			
-			wordFile.reset();
+			wordFile = new Scanner(getClass().getResourceAsStream("commonWords.txt"));
 			boringWords = new String[wordCount];
 			int boringWordCount = 0;
 			while (wordFile.hasNext())
