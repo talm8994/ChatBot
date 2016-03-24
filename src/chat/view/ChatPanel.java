@@ -23,6 +23,7 @@ public class ChatPanel extends JPanel
 	private JLabel label;
 	private JButton socialButton;
 	private JButton tweetButton;
+	private JButton investigateButton;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -37,6 +38,9 @@ public class ChatPanel extends JPanel
 		outputField = new JTextArea(10,25);
 		socialButton = new JButton("social");
 		tweetButton = new JButton("Tweet");
+		investigateButton = new JButton("Investigate");
+		baseLayout.putConstraint(SpringLayout.NORTH, investigateButton, 9, SpringLayout.SOUTH, submitButton);
+		baseLayout.putConstraint(SpringLayout.WEST, investigateButton, 100, SpringLayout.EAST, label);
 		baseLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -6, SpringLayout.NORTH, inputField);
 		baseLayout.putConstraint(SpringLayout.EAST, tweetButton, -156, SpringLayout.EAST, this);
 		
@@ -67,6 +71,7 @@ public class ChatPanel extends JPanel
 		this.add(inputField);
 		this.add(label);
 		this.add(tweetButton);
+		this.add(investigateButton);
 		inputField.setToolTipText("Type here fro chat bot");
 		outputField.setEnabled(false);
 		JButton btnNewButton = new JButton("social");
@@ -126,6 +131,14 @@ public class ChatPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				baseController.sendTweet(inputField.getText());
+			}
+		});
+		
+		investigateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String reslts  
 			}
 		});
 	}
