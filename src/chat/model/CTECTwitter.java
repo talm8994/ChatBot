@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import twitter4j.GeoLocation;
 import twitter4j.Paging;
 import twitter4j.Query;
+import twitter4j.QueryResult;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -64,15 +66,49 @@ public class CTECTwitter
 		
 		private List removeCommonEnglishWords(List<String> wordList)
 		{
+			String[] boringWords =  importWordsToArray();
+			
+			for(int count = 0; count < wordsList.size(); count++)
+			{
+				for(int removeSpot = 0; removeSpot < boringWords.length; removeSpot++)
+				{
+					 if(wordsList.get(count).equalsIgnoreCase(boringWords[removeSpot]))
+					 {
+						 wordsList.remove(count);
+						 count--;
+						 removeSpot = boringWords.length;
+						 
+					 }
+				}
+			}
+			
 			return null;
 		}
 		
 		private String removePunctuation(String currentString)
 		{
-			return null;
+			String punctuation = ",.'?\"(){}^[]<>-";
+			
+			String scrubbedString = "";
+			for(int i = 0; i < currentString.length(); i++)
+			{
+				if(punctuation.indexOf(currentString.charAt(i)) == -1)
+				{
+					scrubbedString += currentString.charAt(i);
+				}
+			}
+			return scrubbedString;
 		}
 		private void removeEmptyText()
 		{
+			for(int spot = 0; spot < wordsList.size(); spot++)
+			{
+				if(wordsList.get(spot).equals(""))
+				{
+					wordsList.remove(spot);
+					spot--;
+				}
+			}
 			
 		}
 		public String sampleInvestigation()

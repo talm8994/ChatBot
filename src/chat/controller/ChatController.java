@@ -6,7 +6,6 @@ package chat.controller;
 
 import chat.view.ChatView;
 import chat.model.*;
-import chat.model.Chatbot;
 import chat.view.*;
 import static org.junit.Assert.*;
 
@@ -92,6 +91,11 @@ public class ChatController
 		public void handleErrors(String error)
 		{
 			display.display(error);
+		}
+		
+		public String sampleInvestigate()
+		{
+			return myTwitter.sampleInvestigation();
 		}
 		
 }
