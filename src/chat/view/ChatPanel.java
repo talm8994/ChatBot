@@ -5,6 +5,7 @@
 package chat.view;
 
 import chat.controller.ChatController;
+import chat.controller.IOController;
 
 import javax.swing.*;
 
@@ -24,6 +25,9 @@ public class ChatPanel extends JPanel
 	private JButton socialButton;
 	private JButton tweetButton;
 	private JButton investigateButton;
+	private JButton saveButton;
+	private JButton loadButton;
+	private JLabel promptButton;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -140,6 +144,23 @@ public class ChatPanel extends JPanel
 			{
 				String results = baseController.sampleInvestigate();
 				outputField.setText(results);
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String file = IOController.saveFile(inputField.getText());
+				label.setText(file);
+			}
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String loadedText = IOController.readTextFromFile(label.getText());
 			}
 		});
 	}
